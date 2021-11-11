@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Serie } from 'src/app/models/serie';
 import { TemplateService } from 'src/app/services/template.service';
+import { PageService } from 'src/app/services/page.service';
 
 @Component({
   selector: 'app-indicator-table',
@@ -14,7 +15,8 @@ export class IndicatorTableComponent implements OnInit {
   theme: string;
 
   constructor(
-    private templateService: TemplateService
+    private templateService: TemplateService,
+    private pageService: PageService
   ) { }
 
   ngOnInit(): void {
@@ -23,6 +25,11 @@ export class IndicatorTableComponent implements OnInit {
     this.templateService.theme.subscribe( theme =>{
       this.theme = theme;
     });
+
+    this.pageService.page.subscribe( page =>{
+      this.page = page;
+    });
+    
   }
 
   nextPage(){

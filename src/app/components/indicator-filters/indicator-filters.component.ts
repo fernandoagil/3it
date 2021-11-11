@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TemplateService } from 'src/app/services/template.service';
+import { PageService } from 'src/app/services/page.service';
 import * as dayjs from 'dayjs';
 import 'dayjs/locale/es';
 
@@ -20,13 +21,12 @@ export class IndicatorFiltersComponent implements OnInit {
   minYear:string;
   year: string = dayjs().format('YYYY');
   years: string[]=[];
-  theme:string;
-
-  
+  theme:string;  
 
   constructor(
     private formBuilder: FormBuilder,
-    private templateService: TemplateService
+    private templateService: TemplateService,
+    private pageService: PageService
   ) { }
 
   ngOnInit(): void {
@@ -47,6 +47,7 @@ export class IndicatorFiltersComponent implements OnInit {
     });
 
     this.filterForm.valueChanges.subscribe( () => {
+      this.pageService.resetPage();
       this.filterEvent.emit(this.filterForm);
     })
   }
