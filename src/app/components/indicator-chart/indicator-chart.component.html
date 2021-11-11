@@ -1,0 +1,17 @@
+<div class="indicator-chart">
+    <div class="indicator-chart__title" [ngClass]="{'indicator-chart__title_tres-it': theme == '3it'}">
+        Tendencia último mes
+    </div>
+    <div class="indicator-chart__container" *ngIf="multi.length > 0">
+        <ngx-charts-area-chart-stacked
+            [fitContainer]="fitContainer"
+            [scheme]="colorScheme"
+            [yAxis]="yAxis"
+            [timeline]="timeline"
+            [results]="multi"
+            [autoScale]="true"
+            [showGridLines]="false">
+        </ngx-charts-area-chart-stacked>
+    </div>
+</div>
+

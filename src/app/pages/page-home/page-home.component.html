@@ -1,0 +1,52 @@
+<div class="page-home">
+    <div class="page-home__header">
+        <app-header></app-header>
+    </div>
+    <div class="page-home__container" [ngClass]="{'page-home__container_tres-it': theme == '3it'}">
+        <div class="container">
+            <div class="row" *ngIf="indicators">
+                <div class="col-12">
+                    <h1 class="page-home__title"  [ngClass]="{'page-home__title_tres-it': theme == '3it'}">
+                        Indicadores económicos
+                    </h1>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <app-indicator-card [indicator]="indicators.uf"></app-indicator-card>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <app-indicator-card [indicator]="indicators.ivp"></app-indicator-card>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <app-indicator-card [indicator]="indicators.dolar"></app-indicator-card>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <app-indicator-card [indicator]="indicators.dolar_intercambio"></app-indicator-card>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <app-indicator-card [indicator]="indicators.euro"></app-indicator-card>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <app-indicator-card [indicator]="indicators.utm"></app-indicator-card>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <app-indicator-card [indicator]="indicators.imacec"></app-indicator-card>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <app-indicator-card [indicator]="indicators.tpm"></app-indicator-card>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <app-indicator-card [indicator]="indicators.libra_cobre"></app-indicator-card>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <app-indicator-card [indicator]="indicators.tasa_desempleo"></app-indicator-card>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <app-indicator-card [indicator]="indicators.bitcoin"></app-indicator-card>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-home__footer">
+        <app-footer></app-footer>
+    </div>
+</div>

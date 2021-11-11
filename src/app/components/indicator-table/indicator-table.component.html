@@ -1,0 +1,34 @@
+<div class="indicator-table" *ngIf="series">
+    <div class="indicator-table__table-container" [ngClass]="{'indicator-table__table-container_tres-it': theme == '3it'}">
+        <table class="table" *ngIf="series.length >0" [ngClass]="{'indicator-table__table_tres-it': theme == '3it'}">
+            <thead>
+                <tr>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Monto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let serie of series | pagination:page">
+                    <td>{{ serie.fecha | dayjs:'DD/MM/YYYY' }}</td>
+                    <td>{{ serie.valor | number:'1.2-5'}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="series.length === 0" class="indicator-table__message-container" [ngClass]="{'indicator-table__message-container_tres-it': theme == '3it'}">
+            No se encontraron resultados para esta búsqueda
+        </div>
+    </div>
+
+    <div class="row justify-content-center" *ngIf="series.length !== 0">
+        <div class="col-auto">
+            <button class="btn btn-primary" [ngClass]="{'btn-primary_tres-it': theme == '3it'}" (click)="previusPage()" [disabled]="page <= 0"> < </button>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-primary" [ngClass]="{'btn-primary_tres-it': theme == '3it'}" (click)="nextPage()" [disabled]="(series | pagination:page + 7).length === 0 " > > </button>
+        </div>
+    </div>
+    
+
+    
+    
+</div>

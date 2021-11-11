@@ -1,0 +1,19 @@
+<form [formGroup]="filterForm">
+    <div class="form-group row">
+        <div class="col-6 col-lg-5">
+            <select id="perfil" name="perfil" class="form-control" [ngClass]="{'form-control_tres-it': theme == '3it'}" formControlName="filter">
+                <option value=""> Último mes </option>
+                <option value="date"> Fecha </option>
+                <option value="year"> Año </option>
+            </select>
+        </div>
+        <div class="col-6 col-lg-5" *ngIf="filterForm.controls.filter.value == 'date'">
+            <input type="date" class="form-control"  [ngClass]="{'form-control_tres-it': theme == '3it'}" [min]="minDate" [max]="today" formControlName="date">
+        </div>
+        <div class="col-6 col-lg-5" *ngIf="filterForm.controls.filter.value == 'year'">
+            <select id="perfil" name="perfil" class="form-control"  [ngClass]="{'form-control_tres-it': theme == '3it'}" formControlName="year">
+                <option *ngFor="let yearOption of years" [value]="yearOption" > {{ yearOption }} </option>                
+            </select>
+        </div>
+    </div>   
+</form>

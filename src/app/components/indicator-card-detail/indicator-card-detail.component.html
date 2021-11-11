@@ -1,0 +1,9 @@
+<h1 class="page-indicator__title" [ngClass]="{'page-indicator__title_tres-it': theme == '3it'}">
+    {{ indicator.nombre }} 
+</h1>
+<div class="page-indicator__amount" [ngClass]="{'page-indicator__title_tres-it': theme == '3it'}">
+    {{ ( indicator.unidad_medida == 'Dólar' || indicator.unidad_medida == 'Pesos' ) ? '$' : '' }}{{ indicator.serie[0].valor | number:'1.2-5' }}{{ ( indicator.unidad_medida == 'Porcentaje' ) ? '%' : '' }}
+</div>
+<div class="page-indicator__unit" [ngClass]="{'page-indicator__unit_tres-it': theme == '3it'}">
+    {{ indicator.unidad_medida }}
+</div>

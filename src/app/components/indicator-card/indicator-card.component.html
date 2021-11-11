@@ -1,0 +1,17 @@
+<div class="indicator-card" [ngClass]="{'indicator-card_tres-it': theme == '3it'}" (click)="viewIndicator()">
+    
+    <div class="indicator-card__title"  [ngClass]="{'indicator-card__title_tres-it': theme == '3it'}">
+        {{ indicator.nombre  }} 
+    </div>
+    <div class="indicator-card__value" [ngClass]="{'indicator-card__amount_tres-it': theme == '3it'}">
+        {{ ( indicator.unidad_medida == 'Dólar' || indicator.unidad_medida == 'Pesos' ) ? '$' : '' }}{{ indicator.valor | number:'1.2-5' }}{{ ( indicator.unidad_medida == 'Porcentaje' ) ? '%' : '' }} 
+    </div>
+    <div class="indicator-card__unit" [ngClass]="{'indicator-card__unit_tres-it': theme == '3it'}">
+        {{ indicator.unidad_medida }}
+    </div>
+
+    <div class="indicator-card__stripe" [ngClass]="{'indicator-card__stripe_tres-it': theme == '3it'}">
+        Ver detalles
+    </div>
+    
+</div>
