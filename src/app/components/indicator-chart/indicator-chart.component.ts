@@ -54,11 +54,14 @@ export class IndicatorChartComponent implements OnInit {
     let newSerie : ChartSerie = { name: this.indicator, series: [] };
 
     newSerie.name = this.indicator;
-    this.serie.reverse().forEach( serie => {
+
+    this.serie.forEach( serie => {
       newSerie.series.push({ name: serie.fecha, value: serie.valor });
     } )
 
-    this.multi.push( newSerie )
+    this.multi.push( newSerie );
+    this.multi[0].series.reverse();
+    
   }
 
 }
