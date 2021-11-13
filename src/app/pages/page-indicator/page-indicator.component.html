@@ -16,7 +16,7 @@
                 <div class="col-12 col-md-6">
                     <div class="page-indicator__card" [ngClass]="{'page-indicator__card_tres-it': theme == '3it'}">
                         <app-indicator-filters (filterEvent)="filter($event)" [indicator]="indicator.codigo" ></app-indicator-filters>
-                        <app-indicator-table [series]="indicator.serie"></app-indicator-table>
+                        <app-indicator-table [series]="indicator.serie" [showSpinner]="showSpinner" [indicator]="indicatorDetail" ></app-indicator-table>
                     </div>
                 </div>
             </div>

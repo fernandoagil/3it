@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IndicatorTableComponent } from './indicator-table.component';
 import { PaginationPipe } from './pipes/pagination.pipe';
 import { DayjsPipe } from './pipes/dayjs.pipe';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 
 
@@ -13,7 +14,8 @@ import { DayjsPipe } from './pipes/dayjs.pipe';
     DayjsPipe
   ],
   imports: [
-    CommonModule
+    CommonModule,    
+    NgxSpinnerModule
   ],
   exports: [
     IndicatorTableComponent

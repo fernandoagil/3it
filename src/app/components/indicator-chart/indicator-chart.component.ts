@@ -2,6 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Serie } from 'src/app/models/serie';
 import { ChartSerie } from 'src/app/models/chart-serie';
 import { TemplateService } from 'src/app/services/template.service';
+import * as dayjs from 'dayjs';
+import 'dayjs/locale/es';
+import * as utc from 'dayjs/plugin/utc';
+dayjs.extend(utc); 
+
 
 @Component({
   selector: 'app-indicator-chart',
@@ -56,7 +61,7 @@ export class IndicatorChartComponent implements OnInit {
     newSerie.name = this.indicator;
 
     this.serie.forEach( serie => {
-      newSerie.series.push({ name: serie.fecha, value: serie.valor });
+      newSerie.series.push({ name: dayjs(serie.fecha).utc().format('DD-MM-YYYY'), value: serie.valor });
     } )
 
     this.multi.push( newSerie );

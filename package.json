@@ -22,6 +22,7 @@
     "@angular/router": "~11.2.14",
     "@swimlane/ngx-charts": "^19.1.0",
     "dayjs": "^1.10.7",
+    "ngx-spinner": "^11.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"

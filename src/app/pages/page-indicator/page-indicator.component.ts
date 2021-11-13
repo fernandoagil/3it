@@ -19,6 +19,7 @@ export class PageIndicatorComponent implements OnInit {
   indicatorType: string = this.activatedRoute.snapshot.params.type; 
   filterForm: FormGroup;
   theme: string;
+  showSpinner: boolean = false;
 
   constructor(
     private indicatorsService: IndicatorsService,
@@ -39,25 +40,33 @@ export class PageIndicatorComponent implements OnInit {
   }
 
   getIndicatorByType(): void{
+    this.showSpinner = true;
     this.indicatorsService.getIndicatorByType(this.indicatorType).subscribe( indicator => {
+      
       this.indicator = indicator;
 
       if (!this.indicatorDetail){
         this.indicatorDetail = indicator;
       }
+
+      this.showSpinner = false;
       
     });
   }
 
   getIndicatorByTypeAndDate(indicatorType, date): void{
+    this.showSpinner = true;
     this.indicatorsService.getIndicatorByTypeAndDate(indicatorType, date).subscribe( indicator => {
       this.indicator = indicator;
+      this.showSpinner = false;
     });
   }
 
   getIndicatorByTypeAndYear(indicatorType, year): void{
+    this.showSpinner = true;
     this.indicatorsService.getIndicatorByTypeAndYear(indicatorType, year).subscribe( indicator => {
       this.indicator = indicator;
+      this.showSpinner = false;
     });
   }
 
