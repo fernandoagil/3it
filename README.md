@@ -1,7 +1,5 @@
 # Testui
 
-Este proyecto ha sido desarrollado con  <3 para optar al cargo de DESARROLLADOR UI.
-
 Puede probar la demo en línea a través del siguiente enlace [DEMO 3IT](https://3it.ingfernandogil.com)
 
 El desarrollo se realizó en [Angular CLI](https://github.com/angular/angular-cli) versión 11.2.15 y antes de ejecutar se debe contar con todos los sus requisitos instalados. 
@@ -23,5 +21,4 @@ Para activar la vista divertida una vez esté dentro de la aplicación, solo deb
 
 ## Contacto
 
-Fernando Gil
-Email: `ingfernandogil@gmail.com`
+Fernando Gil -  `ingfernandogil@gmail.com`
